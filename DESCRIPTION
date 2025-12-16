@@ -29,6 +29,7 @@ Imports:
 Suggests:
     knitr,
     quarto,
+    quickr,
     rmarkdown,
     testthat (>= 3.0.0)
 Additional_repositories:
@@ -56,6 +57,9 @@ Collate:
     'tensor.R'
     'graph.R'
     'graph-print.R'
+    'quickr.R'
+    'graph-to-quickr-r.R'
+    'graph-to-quickr.R'
     'reexports.R'
     'rules-backward.R'
     'rules-stablehlo.R'
