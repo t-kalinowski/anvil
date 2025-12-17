@@ -37,11 +37,33 @@ make_binary_integerish_op <- function(prim) {
   }
 }
 
-infer_unary_integerish <- function(operand) {
-  out <- stablehlo::infer_types_integerish_uni(st2vt(operand))@items[[1L]]
+stablehlo_get0 <- function(name, ns) {
+  get0(name, envir = ns, inherits = FALSE)
+}
+
+infer_unary_integerish_impl <- function(operand, get0_fn) {
+  ns <- asNamespace("stablehlo")
+
+  infer <- get0_fn("infer_types_integerish_uni", ns)
+  if (is.function(infer)) {
+    out <- infer(st2vt(operand))@items[[1L]]
+  } else {
+    # Older versions of {stablehlo} used infer_types_boolean_uni() here.
+    infer <- get0_fn("infer_types_boolean_uni", ns)
+    if (is.function(infer)) {
+      out <- infer(st2vt(operand))@items[[1L]]
+    } else {
+      cli_abort("stablehlo does not provide infer_types_integerish_uni or infer_types_boolean_uni")
+    }
+  }
+
   out <- vt2st(out)
   out@ambiguous <- operand@ambiguous
   list(out)
+}
+
+infer_unary_integerish <- function(operand) {
+  infer_unary_integerish_impl(operand, stablehlo_get0)
 }
 
 make_unary_op <- function(prim) {
