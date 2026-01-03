@@ -27,8 +27,10 @@
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles"><li><a class="dropdown-item" href="../articles/anvil.html">Get Started</a></li>
+    <li><a class="dropdown-item" href="../articles/random-numbers.html">Random Number Generation</a></li>
     <li><a class="dropdown-item" href="../articles/type-promotion.html">Type Promotion</a></li>
     <li><a class="dropdown-item" href="../articles/primitives.html">Primitives Overview</a></li>
+    <li><a class="dropdown-item" href="../articles/debugging.html">Debugging</a></li>
   </ul></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-technical" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Technical</button>
@@ -66,7 +68,7 @@
 
       <dl><dt>
 
-          <code><a href="AbstractTensor.html">AbstractTensor()</a></code>
+          <code><a href="AbstractTensor.html">nv_aten()</a></code> <code><a href="AbstractTensor.html">AbstractTensor()</a></code>
 
         </dt>
         <dd>Abstract Tensor Class</dd>
@@ -80,10 +82,24 @@
 
         <dt>
 
+          <code><a href="DebugBox.html">DebugBox()</a></code>
+
+        </dt>
+        <dd>Debug Box Class</dd>
+
+        <dt>
+
           <code><a href="Graph.html">Graph()</a></code>
 
         </dt>
         <dd>Graph of Primitive Calls</dd>
+
+        <dt>
+
+          <code><a href="GraphBox.html">GraphBox()</a></code>
+
+        </dt>
+        <dd>Graph Box</dd>
 
         <dt>
 
@@ -98,6 +114,13 @@
 
         </dt>
         <dd>Graph Literal</dd>
+
+        <dt>
+
+          <code><a href="GraphNode.html">GraphNode</a></code>
+
+        </dt>
+        <dd>Graph Node</dd>
 
         <dt>
 
@@ -129,10 +152,24 @@
 
         <dt>
 
+          <code><a href="abstract_properties.html">shape_abstract()</a></code> <code><a href="abstract_properties.html">ndims_abstract()</a></code> <code><a href="abstract_properties.html">dtype_abstract()</a></code>
+
+        </dt>
+        <dd>Abstract Properties</dd>
+
+        <dt>
+
           <code><a href="common_dtype.html">common_dtype()</a></code>
 
         </dt>
         <dd>Type Promotion Rules</dd>
+
+        <dt>
+
+          <code><a href="debug_box.html">debug_box()</a></code>
+
+        </dt>
+        <dd>Create a Debug Box</dd>
 
         <dt>
 
@@ -150,6 +187,13 @@
 
         <dt>
 
+          <code><a href="graph_desc_add.html">graph_desc_add()</a></code>
+
+        </dt>
+        <dd>Add a Primitive Call to a Graph Descriptor</dd>
+
+        <dt>
+
           <code><a href="graph_to_quickr_function.html">graph_to_quickr_function()</a></code>
 
         </dt>
@@ -161,6 +205,13 @@
 
         </dt>
         <dd>JIT compile a function</dd>
+
+        <dt>
+
+          <code><a href="jit_eval.html">jit_eval()</a></code>
+
+        </dt>
+        <dd>Jit an Evaluate an Expression</dd>
 
         <dt>
 
@@ -178,10 +229,31 @@
 
         <dt>
 
-          <code><a href="nv_binary_ops.html">nv_add()</a></code> <code><a href="nv_binary_ops.html">nv_mul()</a></code> <code><a href="nv_binary_ops.html">nv_sub()</a></code> <code><a href="nv_binary_ops.html">nv_div()</a></code> <code><a href="nv_binary_ops.html">nv_pow()</a></code> <code><a href="nv_binary_ops.html">nv_eq()</a></code> <code><a href="nv_binary_ops.html">nv_ne()</a></code> <code><a href="nv_binary_ops.html">nv_gt()</a></code> <code><a href="nv_binary_ops.html">nv_ge()</a></code> <code><a href="nv_binary_ops.html">nv_lt()</a></code> <code><a href="nv_binary_ops.html">nv_le()</a></code> <code><a href="nv_binary_ops.html">nv_max()</a></code> <code><a href="nv_binary_ops.html">nv_min()</a></code> <code><a href="nv_binary_ops.html">nv_remainder()</a></code> <code><a href="nv_binary_ops.html">nv_and()</a></code> <code><a href="nv_binary_ops.html">nv_or()</a></code> <code><a href="nv_binary_ops.html">nv_xor()</a></code> <code><a href="nv_binary_ops.html">nv_shift_left()</a></code> <code><a href="nv_binary_ops.html">nv_shift_right_logical()</a></code> <code><a href="nv_binary_ops.html">nv_shift_right_arithmetic()</a></code> <code><a href="nv_binary_ops.html">nv_atan2()</a></code>
+          <code><a href="nv_abs.html">nv_abs()</a></code>
 
         </dt>
-        <dd>Binary Operations</dd>
+        <dd>Absolute Value</dd>
+
+        <dt>
+
+          <code><a href="nv_add.html">nv_add()</a></code>
+
+        </dt>
+        <dd>Addition</dd>
+
+        <dt>
+
+          <code><a href="nv_and.html">nv_and()</a></code>
+
+        </dt>
+        <dd>Logical And</dd>
+
+        <dt>
+
+          <code><a href="nv_atan2.html">nv_atan2()</a></code>
+
+        </dt>
+        <dd>Arctangent 2</dd>
 
         <dt>
 
@@ -213,6 +285,27 @@
 
         <dt>
 
+          <code><a href="nv_cbrt.html">nv_cbrt()</a></code>
+
+        </dt>
+        <dd>Cube Root</dd>
+
+        <dt>
+
+          <code><a href="nv_ceil.html">nv_ceil()</a></code>
+
+        </dt>
+        <dd>Ceiling</dd>
+
+        <dt>
+
+          <code><a href="nv_clamp.html">nv_clamp()</a></code>
+
+        </dt>
+        <dd>Clamp</dd>
+
+        <dt>
+
           <code><a href="nv_concatenate.html">nv_concatenate()</a></code>
 
         </dt>
@@ -227,10 +320,66 @@
 
         <dt>
 
+          <code><a href="nv_cosine.html">nv_cosine()</a></code>
+
+        </dt>
+        <dd>Cosine</dd>
+
+        <dt>
+
+          <code><a href="nv_div.html">nv_div()</a></code>
+
+        </dt>
+        <dd>Division</dd>
+
+        <dt>
+
+          <code><a href="nv_eq.html">nv_eq()</a></code>
+
+        </dt>
+        <dd>Equal</dd>
+
+        <dt>
+
+          <code><a href="nv_exp.html">nv_exp()</a></code>
+
+        </dt>
+        <dd>Exponential</dd>
+
+        <dt>
+
+          <code><a href="nv_expm1.html">nv_expm1()</a></code>
+
+        </dt>
+        <dd>Exponential Minus One</dd>
+
+        <dt>
+
           <code><a href="nv_fill.html">nv_fill()</a></code>
 
         </dt>
         <dd>Constant</dd>
+
+        <dt>
+
+          <code><a href="nv_floor.html">nv_floor()</a></code>
+
+        </dt>
+        <dd>Floor</dd>
+
+        <dt>
+
+          <code><a href="nv_ge.html">nv_ge()</a></code>
+
+        </dt>
+        <dd>Greater Than or Equal</dd>
+
+        <dt>
+
+          <code><a href="nv_gt.html">nv_gt()</a></code>
+
+        </dt>
+        <dd>Greater Than</dd>
 
         <dt>
 
@@ -241,10 +390,136 @@
 
         <dt>
 
+          <code><a href="nv_iota.html">nv_iota()</a></code>
+
+        </dt>
+        <dd>Iota</dd>
+
+        <dt>
+
+          <code><a href="nv_is_finite.html">nv_is_finite()</a></code>
+
+        </dt>
+        <dd>Is Finite</dd>
+
+        <dt>
+
+          <code><a href="nv_le.html">nv_le()</a></code>
+
+        </dt>
+        <dd>Less Than or Equal</dd>
+
+        <dt>
+
+          <code><a href="nv_log.html">nv_log()</a></code>
+
+        </dt>
+        <dd>Natural Logarithm</dd>
+
+        <dt>
+
+          <code><a href="nv_log1p.html">nv_log1p()</a></code>
+
+        </dt>
+        <dd>Log Plus One</dd>
+
+        <dt>
+
+          <code><a href="nv_logistic.html">nv_logistic()</a></code>
+
+        </dt>
+        <dd>Logistic (Sigmoid)</dd>
+
+        <dt>
+
+          <code><a href="nv_lt.html">nv_lt()</a></code>
+
+        </dt>
+        <dd>Less Than</dd>
+
+        <dt>
+
           <code><a href="nv_matmul.html">nv_matmul()</a></code>
 
         </dt>
         <dd>Matrix Multiplication</dd>
+
+        <dt>
+
+          <code><a href="nv_max.html">nv_max()</a></code>
+
+        </dt>
+        <dd>Maximum</dd>
+
+        <dt>
+
+          <code><a href="nv_min.html">nv_min()</a></code>
+
+        </dt>
+        <dd>Minimum</dd>
+
+        <dt>
+
+          <code><a href="nv_mul.html">nv_mul()</a></code>
+
+        </dt>
+        <dd>Multiplication</dd>
+
+        <dt>
+
+          <code><a href="nv_ne.html">nv_ne()</a></code>
+
+        </dt>
+        <dd>Not Equal</dd>
+
+        <dt>
+
+          <code><a href="nv_neg.html">nv_neg()</a></code>
+
+        </dt>
+        <dd>Negation</dd>
+
+        <dt>
+
+          <code><a href="nv_not.html">nv_not()</a></code>
+
+        </dt>
+        <dd>Logical Not</dd>
+
+        <dt>
+
+          <code><a href="nv_or.html">nv_or()</a></code>
+
+        </dt>
+        <dd>Logical Or</dd>
+
+        <dt>
+
+          <code><a href="nv_pad.html">nv_pad()</a></code>
+
+        </dt>
+        <dd>Pad</dd>
+
+        <dt>
+
+          <code><a href="nv_popcnt.html">nv_popcnt()</a></code>
+
+        </dt>
+        <dd>Population Count</dd>
+
+        <dt>
+
+          <code><a href="nv_pow.html">nv_pow()</a></code>
+
+        </dt>
+        <dd>Power</dd>
+
+        <dt>
+
+          <code><a href="nv_print.html">nv_print()</a></code>
+
+        </dt>
+        <dd>Print Tensor</dd>
 
         <dt>
 
@@ -255,10 +530,31 @@
 
         <dt>
 
+          <code><a href="nv_rbinom.html">nv_rbinom()</a></code>
+
+        </dt>
+        <dd>Sample from a Binomial Distribution</dd>
+
+        <dt>
+
+          <code><a href="nv_rdunif.html">nv_rdunif()</a></code>
+
+        </dt>
+        <dd>Sample from a Discrete Uniform Distribution</dd>
+
+        <dt>
+
           <code><a href="nv_reduce_ops.html">nv_reduce_sum()</a></code> <code><a href="nv_reduce_ops.html">nv_reduce_mean()</a></code> <code><a href="nv_reduce_ops.html">nv_reduce_prod()</a></code> <code><a href="nv_reduce_ops.html">nv_reduce_max()</a></code> <code><a href="nv_reduce_ops.html">nv_reduce_min()</a></code> <code><a href="nv_reduce_ops.html">nv_reduce_any()</a></code> <code><a href="nv_reduce_ops.html">nv_reduce_all()</a></code>
 
         </dt>
         <dd>Reduction Operators</dd>
+
+        <dt>
+
+          <code><a href="nv_remainder.html">nv_remainder()</a></code>
+
+        </dt>
+        <dd>Remainder</dd>
 
         <dt>
 
@@ -269,10 +565,10 @@
 
         <dt>
 
-          <code><a href="nv_rng_bit_generator.html">nv_rng_bit_generator()</a></code>
+          <code><a href="nv_reverse.html">nv_reverse()</a></code>
 
         </dt>
-        <dd>Random Numbers</dd>
+        <dd>Reverse</dd>
 
         <dt>
 
@@ -286,14 +582,28 @@
           <code><a href="nv_rnorm.html">nv_rnorm()</a></code>
 
         </dt>
-        <dd>Random Normal Numbers</dd>
+        <dd>Sample from a Normal Distribution</dd>
 
         <dt>
 
-          <code><a href="nv_runif.html">nv_runif()</a></code> <code><a href="nv_runif.html">nv_unif_rand()</a></code>
+          <code><a href="nv_round.html">nv_round()</a></code>
 
         </dt>
-        <dd>Random Uniform Numbers</dd>
+        <dd>Round</dd>
+
+        <dt>
+
+          <code><a href="nv_rsqrt.html">nv_rsqrt()</a></code>
+
+        </dt>
+        <dd>Reciprocal Square Root</dd>
+
+        <dt>
+
+          <code><a href="nv_runif.html">nv_unif_rand()</a></code> <code><a href="nv_runif.html">nv_runif()</a></code>
+
+        </dt>
+        <dd>Internal: Random Unit Uniform Numbers</dd>
 
         <dt>
 
@@ -304,10 +614,73 @@
 
         <dt>
 
+          <code><a href="nv_shift_left.html">nv_shift_left()</a></code>
+
+        </dt>
+        <dd>Shift Left</dd>
+
+        <dt>
+
+          <code><a href="nv_shift_right_arithmetic.html">nv_shift_right_arithmetic()</a></code>
+
+        </dt>
+        <dd>Arithmetic Shift Right</dd>
+
+        <dt>
+
+          <code><a href="nv_shift_right_logical.html">nv_shift_right_logical()</a></code>
+
+        </dt>
+        <dd>Logical Shift Right</dd>
+
+        <dt>
+
+          <code><a href="nv_sign.html">nv_sign()</a></code>
+
+        </dt>
+        <dd>Sign</dd>
+
+        <dt>
+
+          <code><a href="nv_sine.html">nv_sine()</a></code>
+
+        </dt>
+        <dd>Sine</dd>
+
+        <dt>
+
           <code><a href="nv_slice.html">nv_slice()</a></code>
 
         </dt>
         <dd>Slice</dd>
+
+        <dt>
+
+          <code><a href="nv_sqrt.html">nv_sqrt()</a></code>
+
+        </dt>
+        <dd>Square Root</dd>
+
+        <dt>
+
+          <code><a href="nv_sub.html">nv_sub()</a></code>
+
+        </dt>
+        <dd>Subtraction</dd>
+
+        <dt>
+
+          <code><a href="nv_tan.html">nv_tan()</a></code>
+
+        </dt>
+        <dd>Tangent</dd>
+
+        <dt>
+
+          <code><a href="nv_tanh.html">nv_tanh()</a></code>
+
+        </dt>
+        <dd>Hyperbolic Tangent</dd>
 
         <dt>
 
@@ -318,17 +691,10 @@
 
         <dt>
 
-          <code><a href="nv_transpose.html">nv_transpose()</a></code> <code><a href="nv_transpose.html">t(<i>&lt;anvil::GraphBox&gt;</i>)</a></code>
+          <code><a href="nv_transpose.html">nv_transpose()</a></code> <code><a href="nv_transpose.html">t(<i>&lt;anvil::Box&gt;</i>)</a></code>
 
         </dt>
         <dd>Transpose</dd>
-
-        <dt>
-
-          <code><a href="nv_unary_ops.html">nv_neg()</a></code> <code><a href="nv_unary_ops.html">nv_abs()</a></code> <code><a href="nv_unary_ops.html">nv_sqrt()</a></code> <code><a href="nv_unary_ops.html">nv_rsqrt()</a></code> <code><a href="nv_unary_ops.html">nv_log()</a></code> <code><a href="nv_unary_ops.html">nv_tanh()</a></code> <code><a href="nv_unary_ops.html">nv_tan()</a></code> <code><a href="nv_unary_ops.html">nv_sine()</a></code> <code><a href="nv_unary_ops.html">nv_cosine()</a></code> <code><a href="nv_unary_ops.html">nv_floor()</a></code> <code><a href="nv_unary_ops.html">nv_ceil()</a></code> <code><a href="nv_unary_ops.html">nv_sign()</a></code> <code><a href="nv_unary_ops.html">nv_exp()</a></code> <code><a href="nv_unary_ops.html">nv_round()</a></code>
-
-        </dt>
-        <dd>Unary Operations</dd>
 
         <dt>
 
@@ -339,6 +705,475 @@
 
         <dt>
 
+          <code><a href="nv_xor.html">nv_xor()</a></code>
+
+        </dt>
+        <dd>Logical Xor</dd>
+
+        <dt>
+
+          <code><a href="nvl_abs.html">nvl_abs()</a></code>
+
+        </dt>
+        <dd>Primitive Absolute Value</dd>
+
+        <dt>
+
+          <code><a href="nvl_add.html">nvl_add()</a></code>
+
+        </dt>
+        <dd>Primitive Addition</dd>
+
+        <dt>
+
+          <code><a href="nvl_and.html">nvl_and()</a></code>
+
+        </dt>
+        <dd>Primitive And</dd>
+
+        <dt>
+
+          <code><a href="nvl_atan2.html">nvl_atan2()</a></code>
+
+        </dt>
+        <dd>Primitive Atan2</dd>
+
+        <dt>
+
+          <code><a href="nvl_bitcast_convert.html">nvl_bitcast_convert()</a></code>
+
+        </dt>
+        <dd>Primitive Bitcast Convert</dd>
+
+        <dt>
+
+          <code><a href="nvl_broadcast_in_dim.html">nvl_broadcast_in_dim()</a></code>
+
+        </dt>
+        <dd>Primitive Broadcast</dd>
+
+        <dt>
+
+          <code><a href="nvl_cbrt.html">nvl_cbrt()</a></code>
+
+        </dt>
+        <dd>Primitive Cube Root</dd>
+
+        <dt>
+
+          <code><a href="nvl_ceil.html">nvl_ceil()</a></code>
+
+        </dt>
+        <dd>Primitive Ceiling</dd>
+
+        <dt>
+
+          <code><a href="nvl_clamp.html">nvl_clamp()</a></code>
+
+        </dt>
+        <dd>Primitive Clamp</dd>
+
+        <dt>
+
+          <code><a href="nvl_concatenate.html">nvl_concatenate()</a></code>
+
+        </dt>
+        <dd>Primitive Concatenate</dd>
+
+        <dt>
+
+          <code><a href="nvl_convert.html">nvl_convert()</a></code>
+
+        </dt>
+        <dd>Primitive Convert</dd>
+
+        <dt>
+
+          <code><a href="nvl_cosine.html">nvl_cosine()</a></code>
+
+        </dt>
+        <dd>Primitive Cosine</dd>
+
+        <dt>
+
+          <code><a href="nvl_div.html">nvl_div()</a></code>
+
+        </dt>
+        <dd>Primitive Division</dd>
+
+        <dt>
+
+          <code><a href="nvl_dot_general.html">nvl_dot_general()</a></code>
+
+        </dt>
+        <dd>Primitive Dot General</dd>
+
+        <dt>
+
+          <code><a href="nvl_eq.html">nvl_eq()</a></code>
+
+        </dt>
+        <dd>Primitive Equal</dd>
+
+        <dt>
+
+          <code><a href="nvl_exp.html">nvl_exp()</a></code>
+
+        </dt>
+        <dd>Primitive Exponential</dd>
+
+        <dt>
+
+          <code><a href="nvl_expm1.html">nvl_expm1()</a></code>
+
+        </dt>
+        <dd>Primitive Exponential Minus One</dd>
+
+        <dt>
+
+          <code><a href="nvl_fill.html">nvl_fill()</a></code>
+
+        </dt>
+        <dd>Primitive Fill</dd>
+
+        <dt>
+
+          <code><a href="nvl_floor.html">nvl_floor()</a></code>
+
+        </dt>
+        <dd>Primitive Floor</dd>
+
+        <dt>
+
+          <code><a href="nvl_ge.html">nvl_ge()</a></code>
+
+        </dt>
+        <dd>Primitive Greater Equal</dd>
+
+        <dt>
+
+          <code><a href="nvl_gt.html">nvl_gt()</a></code>
+
+        </dt>
+        <dd>Primitive Greater Than</dd>
+
+        <dt>
+
+          <code><a href="nvl_if.html">nvl_if()</a></code>
+
+        </dt>
+        <dd>Primitive If</dd>
+
+        <dt>
+
+          <code><a href="nvl_iota.html">nvl_iota()</a></code>
+
+        </dt>
+        <dd>Primitive Iota</dd>
+
+        <dt>
+
+          <code><a href="nvl_is_finite.html">nvl_is_finite()</a></code>
+
+        </dt>
+        <dd>Primitive Is Finite</dd>
+
+        <dt>
+
+          <code><a href="nvl_le.html">nvl_le()</a></code>
+
+        </dt>
+        <dd>Primitive Less Equal</dd>
+
+        <dt>
+
+          <code><a href="nvl_log.html">nvl_log()</a></code>
+
+        </dt>
+        <dd>Primitive Logarithm</dd>
+
+        <dt>
+
+          <code><a href="nvl_log1p.html">nvl_log1p()</a></code>
+
+        </dt>
+        <dd>Primitive Log Plus One</dd>
+
+        <dt>
+
+          <code><a href="nvl_logistic.html">nvl_logistic()</a></code>
+
+        </dt>
+        <dd>Primitive Logistic (Sigmoid)</dd>
+
+        <dt>
+
+          <code><a href="nvl_lt.html">nvl_lt()</a></code>
+
+        </dt>
+        <dd>Primitive Less Than</dd>
+
+        <dt>
+
+          <code><a href="nvl_max.html">nvl_max()</a></code>
+
+        </dt>
+        <dd>Primitive Maximum</dd>
+
+        <dt>
+
+          <code><a href="nvl_min.html">nvl_min()</a></code>
+
+        </dt>
+        <dd>Primitive Minimum</dd>
+
+        <dt>
+
+          <code><a href="nvl_mul.html">nvl_mul()</a></code>
+
+        </dt>
+        <dd>Primitive Multiplication</dd>
+
+        <dt>
+
+          <code><a href="nvl_ne.html">nvl_ne()</a></code>
+
+        </dt>
+        <dd>Primitive Not Equal</dd>
+
+        <dt>
+
+          <code><a href="nvl_neg.html">nvl_neg()</a></code>
+
+        </dt>
+        <dd>Primitive Negation</dd>
+
+        <dt>
+
+          <code><a href="nvl_not.html">nvl_not()</a></code>
+
+        </dt>
+        <dd>Primitive Not</dd>
+
+        <dt>
+
+          <code><a href="nvl_or.html">nvl_or()</a></code>
+
+        </dt>
+        <dd>Primitive Or</dd>
+
+        <dt>
+
+          <code><a href="nvl_pad.html">nvl_pad()</a></code>
+
+        </dt>
+        <dd>Primitive Pad</dd>
+
+        <dt>
+
+          <code><a href="nvl_popcnt.html">nvl_popcnt()</a></code>
+
+        </dt>
+        <dd>Primitive Population Count</dd>
+
+        <dt>
+
+          <code><a href="nvl_pow.html">nvl_pow()</a></code>
+
+        </dt>
+        <dd>Primitive Power</dd>
+
+        <dt>
+
+          <code><a href="nvl_print.html">nvl_print()</a></code>
+
+        </dt>
+        <dd>Primitive Print</dd>
+
+        <dt>
+
+          <code><a href="nvl_reduce_all.html">nvl_reduce_all()</a></code>
+
+        </dt>
+        <dd>Primitive All Reduction</dd>
+
+        <dt>
+
+          <code><a href="nvl_reduce_any.html">nvl_reduce_any()</a></code>
+
+        </dt>
+        <dd>Primitive Any Reduction</dd>
+
+        <dt>
+
+          <code><a href="nvl_reduce_max.html">nvl_reduce_max()</a></code>
+
+        </dt>
+        <dd>Primitive Max Reduction</dd>
+
+        <dt>
+
+          <code><a href="nvl_reduce_min.html">nvl_reduce_min()</a></code>
+
+        </dt>
+        <dd>Primitive Min Reduction</dd>
+
+        <dt>
+
+          <code><a href="nvl_reduce_prod.html">nvl_reduce_prod()</a></code>
+
+        </dt>
+        <dd>Primitive Product Reduction</dd>
+
+        <dt>
+
+          <code><a href="nvl_reduce_sum.html">nvl_reduce_sum()</a></code>
+
+        </dt>
+        <dd>Primitive Sum Reduction</dd>
+
+        <dt>
+
+          <code><a href="nvl_remainder.html">nvl_remainder()</a></code>
+
+        </dt>
+        <dd>Primitive Remainder</dd>
+
+        <dt>
+
+          <code><a href="nvl_reshape.html">nvl_reshape()</a></code>
+
+        </dt>
+        <dd>Primitive Reshape</dd>
+
+        <dt>
+
+          <code><a href="nvl_reverse.html">nvl_reverse()</a></code>
+
+        </dt>
+        <dd>Primitive Reverse</dd>
+
+        <dt>
+
+          <code><a href="nvl_rng_bit_generator.html">nvl_rng_bit_generator()</a></code>
+
+        </dt>
+        <dd>Primitive RNG Bit Generator</dd>
+
+        <dt>
+
+          <code><a href="nvl_round.html">nvl_round()</a></code>
+
+        </dt>
+        <dd>Primitive Round</dd>
+
+        <dt>
+
+          <code><a href="nvl_rsqrt.html">nvl_rsqrt()</a></code>
+
+        </dt>
+        <dd>Primitive Reciprocal Square Root</dd>
+
+        <dt>
+
+          <code><a href="nvl_select.html">nvl_select()</a></code>
+
+        </dt>
+        <dd>Primitive Select</dd>
+
+        <dt>
+
+          <code><a href="nvl_shift_left.html">nvl_shift_left()</a></code>
+
+        </dt>
+        <dd>Primitive Shift Left</dd>
+
+        <dt>
+
+          <code><a href="nvl_shift_right_arithmetic.html">nvl_shift_right_arithmetic()</a></code>
+
+        </dt>
+        <dd>Primitive Arithmetic Shift Right</dd>
+
+        <dt>
+
+          <code><a href="nvl_shift_right_logical.html">nvl_shift_right_logical()</a></code>
+
+        </dt>
+        <dd>Primitive Logical Shift Right</dd>
+
+        <dt>
+
+          <code><a href="nvl_sign.html">nvl_sign()</a></code>
+
+        </dt>
+        <dd>Primitive Sign</dd>
+
+        <dt>
+
+          <code><a href="nvl_sine.html">nvl_sine()</a></code>
+
+        </dt>
+        <dd>Primitive Sine</dd>
+
+        <dt>
+
+          <code><a href="nvl_slice.html">nvl_slice()</a></code>
+
+        </dt>
+        <dd>Primitive Slice</dd>
+
+        <dt>
+
+          <code><a href="nvl_sqrt.html">nvl_sqrt()</a></code>
+
+        </dt>
+        <dd>Primitive Square Root</dd>
+
+        <dt>
+
+          <code><a href="nvl_sub.html">nvl_sub()</a></code>
+
+        </dt>
+        <dd>Primitive Subtraction</dd>
+
+        <dt>
+
+          <code><a href="nvl_tan.html">nvl_tan()</a></code>
+
+        </dt>
+        <dd>Primitive Tangent</dd>
+
+        <dt>
+
+          <code><a href="nvl_tanh.html">nvl_tanh()</a></code>
+
+        </dt>
+        <dd>Primitive Hyperbolic Tangent</dd>
+
+        <dt>
+
+          <code><a href="nvl_transpose.html">nvl_transpose()</a></code>
+
+        </dt>
+        <dd>Primitive Transpose</dd>
+
+        <dt>
+
+          <code><a href="nvl_while.html">nvl_while()</a></code>
+
+        </dt>
+        <dd>Primitive While Loop</dd>
+
+        <dt>
+
+          <code><a href="nvl_xor.html">nvl_xor()</a></code>
+
+        </dt>
+        <dd>Primitive Xor</dd>
+
+        <dt>
+
           <code><a href="platform.html">platform()</a></code>
 
         </dt>
@@ -346,10 +1181,31 @@
 
         <dt>
 
+          <code><a href="prim.html">prim()</a></code>
+
+        </dt>
+        <dd>Get a Primitive</dd>
+
+        <dt>
+
+          <code><a href="register_primitive.html">register_primitive()</a></code>
+
+        </dt>
+        <dd>Register a Primitive</dd>
+
+        <dt>
+
           <code><a href="stablehlo.html">stablehlo()</a></code>
 
         </dt>
         <dd>Lower a function to StableHLO</dd>
+
+        <dt>
+
+          <code><a href="tensorish.html">tensorish</a></code>
+
+        </dt>
+        <dd>Tensor-like Objects</dd>
 
         <dt>
 
@@ -364,6 +1220,13 @@
 
         </dt>
         <dd>Trace an R function into a Graph</dd>
+
+        <dt>
+
+          <code><a href="transform_gradient.html">transform_gradient()</a></code>
+
+        </dt>
+        <dd>Transform a graph to its gradient</dd>
       </dl></div>
   </main></div>
 

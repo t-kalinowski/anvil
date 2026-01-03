@@ -27,8 +27,10 @@
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles"><li><a class="dropdown-item" href="../articles/anvil.html">Get Started</a></li>
+    <li><a class="dropdown-item" href="../articles/random-numbers.html">Random Number Generation</a></li>
     <li><a class="dropdown-item" href="../articles/type-promotion.html">Type Promotion</a></li>
     <li><a class="dropdown-item" href="../articles/primitives.html">Primitives Overview</a></li>
+    <li><a class="dropdown-item" href="../articles/debugging.html">Debugging</a></li>
   </ul></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-technical" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Technical</button>
@@ -70,16 +72,16 @@
 
 
 <dl><dt id="arg-lhs">lhs<a class="anchor" aria-label="anchor" href="#arg-lhs"></a></dt>
-<dd><p>(<code><a href="nv_tensor.html">nv_tensor</a></code>)</p></dd>
+<dd><p>(<code><a href="tensorish.html">tensorish</a></code>)</p></dd>
 
 
 <dt id="arg-rhs">rhs<a class="anchor" aria-label="anchor" href="#arg-rhs"></a></dt>
-<dd><p>(<code><a href="nv_tensor.html">nv_tensor</a></code>)</p></dd>
+<dd><p>(<code><a href="tensorish.html">tensorish</a></code>)</p></dd>
 
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p><code><a href="nv_tensor.html">nv_tensor</a></code></p>
+    <p><code><a href="tensorish.html">tensorish</a></code></p>
     </div>
     <div class="section level2">
     <h2 id="shapes">Shapes<a class="anchor" aria-label="anchor" href="#shapes"></a></h2>
@@ -89,12 +91,6 @@
 <li><p><code>rhs</code>: <code>(b1, ..., bk, n, p)</code></p></li>
 <li><p>output: <code>(b1, ..., bk, m, p)</code></p></li>
 </ul></div>
-    <div class="section level2">
-    <h2 id="broadcasting">Broadcasting<a class="anchor" aria-label="anchor" href="#broadcasting"></a></h2>
-
-
-<p>All dimensions but the last two are broadcasted.</p>
-    </div>
 
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>

@@ -86,8 +86,7 @@ x + x
 y + y
 ```
 
-    ## Error in `.current_descriptor()`:
-    ## ! No graph is currently being built. Did you forget to use `jit()`?
+    ## i32{2,3}
 
 ## JIT Compilation
 
@@ -559,7 +558,8 @@ weights
     ## $beta
     ## AnvilTensor
 
-    ## Error: ToLiteral() called on deleted or donated buffer: INVALID_ARGUMENT: Buffer has been deleted or donated.
+    ## Error:
+    ## ! ToLiteral() called on deleted or donated buffer: INVALID_ARGUMENT: Buffer has been deleted or donated.
 
 But the new weights are still there.
 

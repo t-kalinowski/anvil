@@ -12,15 +12,15 @@ nv_matmul(lhs, rhs)
 
 - lhs:
 
-  ([`nv_tensor`](nv_tensor.md))
+  ([`tensorish`](tensorish.md))
 
 - rhs:
 
-  ([`nv_tensor`](nv_tensor.md))
+  ([`tensorish`](tensorish.md))
 
 ## Value
 
-[`nv_tensor`](nv_tensor.md)
+[`tensorish`](tensorish.md)
 
 ## Shapes
 
@@ -29,7 +29,3 @@ nv_matmul(lhs, rhs)
 - `rhs`: `(b1, ..., bk, n, p)`
 
 - output: `(b1, ..., bk, m, p)`
-
-## Broadcasting
-
-All dimensions but the last two are broadcasted.
