@@ -44,9 +44,6 @@
 - [`graph_desc_add()`](graph_desc_add.md) : Add a Primitive Call to a
   Graph Descriptor
 
-- [`graph_to_quickr_function()`](graph_to_quickr_function.md) : Convert
-  a Graph to a quickr-compiled function
-
 - [`jit()`](jit.md) : JIT compile a function
 
 - [`jit_eval()`](jit_eval.md) : Jit an Evaluate an Expression
