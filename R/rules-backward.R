@@ -305,7 +305,7 @@ p_reduce_max[["backward"]] <- p_reduce_min[["backward"]] <- function(inputs, out
   )
 }
 
-p_broadcast_in_dim[["backward"]] <- function(inputs, outputs, grads, shape_out, broadcast_dimensions, .required) {
+p_broadcast_in_dim[["backward"]] <- function(inputs, outputs, grads, shape, broadcast_dimensions, .required) {
   operand <- inputs[[1L]]
   y <- outputs[[1L]]
   grad <- grads[[1L]]
@@ -902,7 +902,7 @@ diag_mask <- function(n) {
 triangular_mask <- function(n, dt, lower, unit_diagonal) {
   mask <- if (lower) tril_mask(n, dt) else triu_mask(n, dt)
   if (unit_diagonal) {
-    nvl_ifelse(diag_mask(n), nvl_fill(FALSE, dtype = "i1", shape = c(n, n)), mask)
+    nvl_ifelse(diag_mask(n), nvl_fill(FALSE, dtype = "bool", shape = c(n, n)), mask)
   } else {
     mask
   }

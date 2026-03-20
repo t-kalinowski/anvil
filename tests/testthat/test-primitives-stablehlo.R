@@ -73,6 +73,14 @@ test_that("p_dynamic_slice", {
 })
 
 test_that("p_dynamic_update_slice", {
+  scalar <- jit(function(x, update) {
+    nvl_dynamic_update_slice(x, update)
+  })
+  expect_equal(
+    scalar(nv_scalar(1L, dtype = "i32"), nv_scalar(100L, dtype = "i32")),
+    nv_scalar(100L, dtype = "i32")
+  )
+
   # Basic dynamic update slice with scalar indices
   f <- function(start_i, start_j) {
     x <- nv_tensor(1:12, dtype = "i32", shape = c(3, 4))
@@ -192,7 +200,7 @@ test_that("p_reduce_max", {
   expect_equal(out, array(c(0, 4)))
   # f64
   x <- jit_eval({
-    nv_reduce_max(nv_tensor(c(1, 2, 3), dtype = "f64"), dim = 1L)
+    nv_reduce_max(nv_tensor(c(1, 2, 3), dtype = "f64"), dims = 1L)
   })
   expect_equal(x, nv_scalar(3, dtype = "f64"))
 })
@@ -211,7 +219,7 @@ test_that("p_reduce_min", {
   expect_equal(out, array(c(-1, 2)))
   # f64
   x <- jit_eval({
-    nv_reduce_min(nv_tensor(c(1, 2, 3), dtype = "f64"), dim = 1L)
+    nv_reduce_min(nv_tensor(c(1, 2, 3), dtype = "f64"), dims = 1L)
   })
   expect_equal(x, nv_scalar(1, dtype = "f64"))
 })
@@ -226,14 +234,14 @@ test_that("p_reduce_min drop = FALSE", {
 test_that("p_reduce_any", {
   x <- array(c(TRUE, FALSE, TRUE, FALSE, FALSE, FALSE), c(2, 3))
   f <- jit(function(a) nvl_reduce_any(a, dims = 2L, drop = TRUE))
-  out <- as_array(f(nv_tensor(x, dtype = "pred")))
+  out <- as_array(f(nv_tensor(x, dtype = "bool")))
   expect_equal(out, array(c(TRUE, FALSE)))
 })
 
 test_that("p_reduce_all", {
   x <- array(c(TRUE, FALSE, TRUE, FALSE, FALSE, FALSE), c(2, 3))
   f <- jit(function(a) nvl_reduce_all(a, dims = 1L, drop = FALSE))
-  out <- as_array(f(nv_tensor(x, dtype = "pred")))
+  out <- as_array(f(nv_tensor(x, dtype = "bool")))
   expect_equal(out, array(rep(FALSE, 3), c(1, 3)))
 })
 
@@ -494,7 +502,7 @@ test_that("error when multiplying lists in if-statement", {
 test_that("p_is_finite", {
   f <- jit(function(x) nvl_is_finite(x))
   x <- nv_tensor(c(1.0, Inf, -Inf, NaN), dtype = "f32")
-  expect_equal(f(x), nv_tensor(c(TRUE, FALSE, FALSE, FALSE), dtype = "pred"))
+  expect_equal(f(x), nv_tensor(c(TRUE, FALSE, FALSE, FALSE), dtype = "bool"))
 })
 
 test_that("p_clamp", {
@@ -588,8 +596,6 @@ test_that("p_scatter", {
 })
 
 test_that("p_print", {
-  skip_if(!is_cpu(), "print_tensor only works on CPU")
-
   f <- jit(function(x) nvl_print(x))
   x <- nv_tensor(c(1.0, 2.0, 3.0), dtype = "f32")
   expect_snapshot({

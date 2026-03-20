@@ -108,9 +108,12 @@ dynamic_start_indices <- function(starts) {
   out
 }
 
-.static_start_indices <- jit(function(...) {
-  dynamic_start_indices(list(...))
-})
+.static_start_indices <- jit(
+  function(...) {
+    dynamic_start_indices(list(...))
+  },
+  backend = "xla"
+)
 
 static_start_indices <- function(starts) {
   starts <- lapply(starts, nv_tensor, dtype = "i32")
@@ -415,7 +418,7 @@ parse_subset_spec <- function(quo, dim_size) {
   # Tensor indices (AnvilTensor or GraphBox)
   if (is_tensorish(e) && !is.atomic(e)) {
     dt <- dtype_abstract(e)
-    if (!(inherits(dt, "IntegerType") || inherits(dt, "UnsignedType"))) {
+    if (!(inherits(dt, "IntegerType") || inherits(dt, "UIntegerType"))) {
       cli_abort("Dynamic indices must be integers, but got {.cls {class(dt)[1]}}")
     }
     nd <- ndims_abstract(e)
