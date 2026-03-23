@@ -10,7 +10,7 @@ nvl_iota(dim, dtype, shape, start = 1L, ambiguous = FALSE)
 \item{dim}{(\code{integer(1)})\cr
 Dimension along which values increase (1-indexed).}
 
-\item{dtype}{(\code{character(1)} | \code{\link[stablehlo:TensorDataType]{stablehlo::TensorDataType}})\cr
+\item{dtype}{(\code{character(1)} | \code{\link[tengen:TensorDataType]{tengen::TensorDataType}})\cr
 Data type.}
 
 \item{shape}{(\code{integer()})\cr
@@ -35,6 +35,7 @@ Creates a tensor with values increasing along the specified dimension.
 
 \itemize{
 \item \code{stablehlo}
+\item \code{quickr}
 }
 }
 

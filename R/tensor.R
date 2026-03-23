@@ -32,8 +32,10 @@
 #'   Object convertible to a [`PJRTBuffer`][pjrt::pjrt_buffer].
 #'   Includes `integer()`, `double()`, `logical()` vectors and arrays.
 #' @param dtype (`NULL` | `character(1)` | [`TensorDataType`])\cr
-#'   One of `r stablehlo:::roxy_dtypes()` or a [`stablehlo::TensorDataType`].
-#'   The default (`NULL`) uses `f32` for numeric data, `i32` for integer data, and `i1` for logical data.
+#'   One of `r stablehlo:::roxy_dtypes()` or a [`tengen::TensorDataType`].
+#'   The default (`NULL`) uses the current backend's default dtype:
+#'   `f32` for numeric data on `"xla"`, `f64` for numeric data on `"quickr"`,
+#'   `i32` for integer data, and `bool` for logical data.
 #' @param device (`NULL` | `character(1)` | [`PJRTDevice`][pjrt::pjrt_device])\cr
 #'   The device for the tensor (`"cpu"`, `"cuda"`).
 #'   Default is to use the CPU for new tensors.
@@ -106,6 +108,9 @@ nv_tensor <- function(data, dtype = NULL, device = NULL, shape = NULL, ambiguous
   if (is.null(ambiguous)) {
     ambiguous <- FALSE
   }
+  if (is.null(dtype) && !inherits(data, "PJRTBuffer")) {
+    dtype <- default_dtype(data)
+  }
   if (is_dtype(dtype)) {
     dtype <- as.character(dtype)
   }
@@ -148,6 +153,9 @@ ensure_nv_tensor <- function(x, ambiguous = FALSE) {
 nv_scalar <- function(data, dtype = NULL, device = NULL, ambiguous = NULL) {
   if (is.null(ambiguous)) {
     ambiguous <- FALSE
+  }
+  if (is.null(dtype)) {
+    dtype <- default_dtype(data)
   }
   if (is_dtype(dtype)) {
     dtype <- as.character(dtype)
@@ -249,7 +257,7 @@ device.AnvilTensor <- function(x, ...) {
 #' - [`ambiguous()`]: Get whether the dtype is ambiguous.
 #' - [`ndims()`][tengen::ndims]: Get the number of dimensions.
 #'
-#' @param dtype ([`stablehlo::TensorDataType`] | `character(1)`)\cr
+#' @param dtype ([`tengen::TensorDataType`] | `character(1)`)\cr
 #'   The data type of the tensor.
 #' @param shape ([`stablehlo::Shape`] | `integer()`)\cr
 #'   The shape of the tensor. Can be provided as an integer vector.
@@ -387,8 +395,9 @@ ConcreteTensor <- function(data) {
 #'   The scalar value or scalarish AnvilTensor (contains 1 element).
 #' @param shape ([`stablehlo::Shape`] | `integer()`)\cr
 #'   The shape of the tensor.
-#' @param dtype ([`stablehlo::TensorDataType`])\cr
-#'   The data type. Defaults to `f32` for numeric, `i32` for integer, `i1` for logical.
+#' @param dtype ([`tengen::TensorDataType`])\cr
+#'   The data type. Defaults to the current backend's default floating dtype,
+#'   `i32` for integer, and `bool` for logical.
 #' @template param_ambiguous
 #'
 #' @examplesIf pjrt::plugin_is_downloaded()
@@ -445,7 +454,7 @@ LiteralTensor <- function(data, shape, dtype = default_dtype(data), ambiguous) {
 #'
 #' @param shape ([`stablehlo::Shape`] | `integer()`)\cr
 #'   The shape of the tensor.
-#' @param dtype ([`stablehlo::TensorDataType`])\cr
+#' @param dtype ([`tengen::TensorDataType`])\cr
 #'   The data type.
 #' @param dimension (`integer(1)`)\cr
 #'   The dimension along which values increase.
@@ -469,6 +478,7 @@ IotaTensor <- function(shape, dtype, dimension, start = 1L, ambiguous = FALSE) {
   shape <- as_shape(shape)
   dtype <- as_dtype(dtype)
   assert_flag(ambiguous)
+  # stablehlo::Shape is a wrapper object; its rank is length(shape$dims), not length(shape)
   assert_int(dimension, lower = 1L, upper = length(shape$dims))
   assert_int(start)
   structure(

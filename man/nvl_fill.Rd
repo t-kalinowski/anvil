@@ -13,7 +13,7 @@ Scalar value to fill the tensor with.}
 \item{shape}{(\code{integer()})\cr
 Shape of the output tensor.}
 
-\item{dtype}{(\code{character(1)} | \code{\link[stablehlo:TensorDataType]{stablehlo::TensorDataType}})\cr
+\item{dtype}{(\code{character(1)} | \code{\link[tengen:TensorDataType]{tengen::TensorDataType}})\cr
 Data type.}
 
 \item{ambiguous}{(\code{logical(1)})\cr
@@ -36,6 +36,7 @@ efficiently represented in the compiled program, while the latter uses
 
 \itemize{
 \item \code{stablehlo}
+\item \code{quickr}
 }
 }
 

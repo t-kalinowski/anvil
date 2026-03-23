@@ -107,7 +107,7 @@ test_that("== and != operators throw errors for AbstractTensor", {
 
 test_that("to_abstract", {
   # literal
-  expect_equal(to_abstract(TRUE), LiteralTensor(TRUE, c(), "pred", FALSE))
+  expect_equal(to_abstract(TRUE), LiteralTensor(TRUE, c(), "bool", FALSE))
   expect_equal(to_abstract(1L), LiteralTensor(1L, c(), "i32", TRUE))
   expect_equal(to_abstract(1.0), LiteralTensor(1.0, c(), "f32", TRUE))
   # anvil tensor
@@ -151,7 +151,7 @@ test_that("as_shape for c() (i.e., NULL)", {
 
 test_that("to_abstract", {
   # literal
-  expect_equal(to_abstract(TRUE), LiteralTensor(TRUE, c(), "pred", FALSE))
+  expect_equal(to_abstract(TRUE), LiteralTensor(TRUE, c(), "bool", FALSE))
   expect_equal(to_abstract(1L), LiteralTensor(1L, c(), "i32", TRUE))
   expect_equal(to_abstract(1.0), LiteralTensor(1.0, c(), "f32", TRUE))
   # anvil tensor
@@ -166,4 +166,14 @@ test_that("to_abstract", {
 test_that("stablehlo dtype is printed", {
   skip_if(!is_cpu())
   expect_snapshot(nv_tensor(TRUE))
+})
+
+test_that("default floating dtype follows the configured backend", {
+  withr::local_options(list(anvil.default_backend = "xla"))
+  expect_equal(dtype(nv_tensor(1.0)), as_dtype("f32"))
+  expect_equal(dtype(nv_scalar(1.0)), as_dtype("f32"))
+
+  withr::local_options(list(anvil.default_backend = "quickr"))
+  expect_equal(dtype(nv_tensor(1.0)), as_dtype("f64"))
+  expect_equal(dtype(nv_scalar(1.0)), as_dtype("f64"))
 })
